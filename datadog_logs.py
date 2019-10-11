@@ -1,6 +1,7 @@
 import argparse
-import os
 from datetime import datetime, timezone
+import json
+import os
 
 import requests
 
@@ -79,7 +80,7 @@ def display_logs(
         limit: int = 1_000):
     logs = list_logs(query, start, end, limit)
     for log in logs:
-        print(log)
+        print(json.dumps(log))
 
 
 if __name__ == "__main__":
